@@ -1,4 +1,8 @@
-﻿global using Microsoft.AspNetCore.Mvc;
-global using Asp.Versioning;
+﻿global using Asp.Versioning;
 global using DessertsAPI.Models;
-global using Amazon.Lambda.AspNetCoreServer;
+global using Asp.Versioning.Conventions;
+global using Microsoft.OpenApi.Models;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using System.Security.Claims;
+global using DessertsAPI.Controllers;
+global using DessertsAPI.Extensions;
