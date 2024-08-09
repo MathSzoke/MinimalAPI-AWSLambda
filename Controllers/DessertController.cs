@@ -21,7 +21,7 @@ public static class DessertController
         /// <returns>Uma lista de sobremesas.</returns>
         /// <response code="200">Lista de sobremesas retornada com sucesso.</response>
         /// <response code="401">Não autorizado. Token JWT ausente ou inválido.</response>
-        app.MapGet("/api/v{v:apiVersion}/Dessert", (ClaimsPrincipal user) => Results.Ok(Desserts))
+        app.MapGet("/api/v{v:apiVersion}/Dessert", () => Results.Ok(Desserts))
             .WithName("GetAllDesserts")
             .WithTags("Desserts")
             .WithApiVersionSet(apiVersionSet)

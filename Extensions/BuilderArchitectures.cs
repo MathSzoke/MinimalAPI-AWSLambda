@@ -84,25 +84,22 @@ public static class BuilderArchitectures
             options.DefaultAuthenticateScheme = "Bearer";
             options.DefaultChallengeScheme = "Bearer";
         })
-        .AddJwtBearer("Bearer", options =>
+        .AddJwtBearer("Bearer", options => options.Events = new JwtBearerEvents
         {
-            options.Events = new JwtBearerEvents
+            OnMessageReceived = context =>
             {
-                OnMessageReceived = context =>
+                var token = context.Request.Headers.Authorization.FirstOrDefault()?.Split(" ").Last();
+                if (!string.IsNullOrEmpty(token))
                 {
-                    var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-                    if (!string.IsNullOrEmpty(token))
-                    {
-                        context.Principal = new ClaimsPrincipal(new ClaimsIdentity(new[]
-                        {
-                            new Claim(ClaimTypes.Name, "TestUser")
-                        }, "Bearer"));
+                    context.Principal = new ClaimsPrincipal(new ClaimsIdentity(
+                    [
+                        new Claim(ClaimTypes.Name, "TestUser")
+                    ], "Bearer"));
 
-                        context.Success();
-                    }
-                    return Task.CompletedTask;
+                    context.Success();
                 }
-            };
+                return Task.CompletedTask;
+            }
         });
 
         builder.Services.AddAuthorization();
