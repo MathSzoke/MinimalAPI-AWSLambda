@@ -25,8 +25,8 @@ Este projeto é uma API Minimal desenvolvida para gerenciar sobremesas. A API ut
 1. **Clone o repositório:**
 
     ```bash
-    git clone <URL_DO_REPOSITORIO>
-    cd <NOME_DO_REPOSITORIO>
+    git clone (https://github.com/MathSzoke/MinimalAPI-AWSLambda.git)
+    cd MinimalAPI-AWSLambda
     ```
 
 2. **Restaure as dependências:**
@@ -41,7 +41,7 @@ Este projeto é uma API Minimal desenvolvida para gerenciar sobremesas. A API ut
     dotnet run
     ```
 
-   A aplicação estará disponível em `https://localhost:5001`.
+   A aplicação estará disponível em `https://localhost:44323`.
 
 ## Implantação na AWS Lambda
 
@@ -56,8 +56,6 @@ Certifique-se de que você tem o [AWS CLI](https://aws.amazon.com/cli/) e o [AWS
     ```bash
     dotnet tool install -g Amazon.Lambda.Tools
     ```
-
-2. **Configure o arquivo `aws-lambda-tools-defaults.json`** com as informações da sua função Lambda.
 
 ### Comandos úteis
 
@@ -87,11 +85,11 @@ Certifique-se de que você tem o [AWS CLI](https://aws.amazon.com/cli/) e o [AWS
 
 - **Para visualizar a documentação Swagger (em desenvolvimento):**
 
-    Acesse `https://localhost:5001/swagger` no seu navegador.
+    Acesse `https://localhost:44323/swagger` no seu navegador.
 
 ## Documentação
 
-A API está documentada usando Swagger. A documentação pode ser visualizada na URL `https://localhost:5001/swagger` quando a aplicação estiver em execução no ambiente de desenvolvimento.
+A API está documentada usando Swagger. A documentação pode ser visualizada na URL `https://localhost:44323/swagger` quando a aplicação estiver em execução no ambiente de desenvolvimento.
 
 ## Contribuições
 
