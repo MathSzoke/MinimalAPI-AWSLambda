@@ -1,0 +1,6 @@
+@DessertsAPI_HostAddress = http://localhost:5133
+
+GET {{DessertsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
