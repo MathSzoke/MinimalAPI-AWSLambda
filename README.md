@@ -25,7 +25,7 @@ Este projeto é uma API Minimal desenvolvida para gerenciar sobremesas. A API ut
 1. **Clone o repositório:**
 
     ```bash
-    git clone (https://github.com/MathSzoke/MinimalAPI-AWSLambda.git)
+    git clone https://github.com/MathSzoke/MinimalAPI-AWSLambda.git
     cd MinimalAPI-AWSLambda
     ```
 
